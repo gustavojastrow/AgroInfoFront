@@ -1,0 +1,143 @@
+.container {
+  margin-left: 240px;
+  padding: 20px;
+  max-width: calc(100% - 240px);
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#plantacoes-finalizadas {
+  font-size: 2em;
+  color: #388e3c; 
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.plantacao-card {
+  width: 80%; 
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-left: 6px solid #388e3c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+  .plantacao-card:hover {
+    transform: translateY(-3px);
+  }
+
+.card-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.data-info {
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  font-size: 0.8em;
+  color: #388e3c;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+  .data-info > div {
+    margin-top: 5px;
+  }
+
+
+.data-icone {
+  margin-right: 5px;
+}
+
+.descricao{
+  font-size: 1em;
+  color: #666;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+  button:hover {
+    background-color: #66bb6a;
+  }
+
+.titulo-detalhes {
+  font-size: 1.3em;
+}
+
+
+.detalhes {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 8px;
+  border-top: 1px solid #ddd;
+}
+
+  .detalhes.visible {
+    display: block;
+    opacity: 1;
+  }
+
+.lista {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+  .lista li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+    color: #555;
+  }
+
+.imagem-galeria {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+  .imagem-galeria figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  .imagem-galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+
+    .imagem-galeria img:hover {
+      transform: scale(1.05);
+    }
+
+  .imagem-galeria figcaption {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #444;
+  }

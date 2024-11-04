@@ -1,0 +1,45 @@
+<div *ngIf="climaData" class="clima-container">
+  <h2>Previsão do Tempo - {{ climaData.name }}</h2>
+
+  <div *ngIf="messageAlerta" class="clima-alerta">
+    <i class="fas fa-exclamation-triangle"></i>
+    <span>{{ messageAlerta }}</span>
+
+  </div>
+  <div class="clima-info">
+    <div class="clima-temp">
+      <i class="fas fa-thermometer-half"></i>
+      <span>Temperatura: {{ climaData.main.temp }} °C</span>
+    </div>
+      
+    <div class="clima-condicao">
+      <i class="fas fa-cloud"></i>
+      <span>Condições: {{ climaData.weather[0].description | titlecase }}</span>
+    </div>
+
+    <div class="clima-humidadade">
+      <i class="fas fa-tint"></i>
+      <span>Umidade: {{ climaData.main.humidity }}%</span>
+    </div>
+
+    <div class="clima-vento">
+      <i class="fas fa-wind"></i>
+      <span>Vento: {{ climaData.wind.speed }} m/s</span>
+    </div>
+
+    <div class="clima-sensacao">
+      <i class="fas fa-temperature-high"></i>
+      <span>Sensação Térmica: {{ climaData.main.feels_like }} °C</span>
+    </div>
+  </div>
+
+
+  <h3 *ngIf="previsaoData?.list">Previsão para as próximas 24 Horas</h3>
+  <div *ngIf="previsaoData?.list" class="previsao-3hour">
+    <div *ngFor="let previsao of previsaoData.list | slice:0:8" class="previsao-item">
+      <div class="previsao-hora">{{ previsao.dt * 1000 | date:'HH:mm' }}</div>
+      <div class="previsao-temp">🌡️ {{ previsao.main.temp }}°C </div>
+      <div class="previsao-chuva">🌧️ Chuva: {{ (previsao.pop * 100) | number:'1.0-0' }}%</div>
+    </div>
+  </div>
+</div>

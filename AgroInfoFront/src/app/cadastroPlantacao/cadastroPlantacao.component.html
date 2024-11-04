@@ -1,0 +1,79 @@
+<div class="container">
+  <div class="form-title">Cadastro de Plantações</div>
+  <form [formGroup]="plantacaoForm" (ngSubmit)="onSubmit()" enctype="multipart/form-data" class="formulario">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" formControlName="nome" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="descricao" class="form-label">Descrição:</label>
+      <textarea id="descricao" formControlName="descricao" class="form-control" required></textarea>
+    </div>
+
+    <div class="imagem-container">
+      <div class="imagem-upload">
+        <label for="imagemInicio" class="form-label">Imagem - Início da plantação (Opcional)</label>
+        <input type="file" id="imagemInicio" (change)="selecionarArquivo($event, 'imagemInicio')" class="file-input">
+        <div class="file-input-fundo">Escolha uma imagem</div>
+        <img *ngIf="imagePreview['inicio']" [src]="imagePreview['inicio']" alt="Preview" class="image-preview">
+      </div>
+
+      <div class="imagem-upload">
+        <label for="imagemMeio" class="form-label">Imagem - Metade da plantação (Opcional)</label>
+        <input type="file" id="imagemMeio" (change)="selecionarArquivo($event, 'imagemMeio')" class="file-input">
+        <div class="file-input-fundo">Escolha uma imagem</div>
+        <img *ngIf="imagePreview['meio']" [src]="imagePreview['meio']" alt="Preview" class="image-preview">
+      </div>
+
+      <div class="imagem-upload">
+        <label for="imagemFim" class="form-label">Imagem - Final da plantação (Opcional)</label>
+        <input type="file" id="imagemFim" (change)="selecionarArquivo($event, 'imagemFim')" class="file-input">
+        <div class="file-input-fundo">Escolha uma imagem</div>
+        <img *ngIf="imagePreview['fim']" [src]="imagePreview['fim']" alt="Preview" class="image-preview">
+      </div>
+    </div>
+
+    <div formArrayName="agrotoxicos">
+      <h4>Agrotóxicos</h4>
+      <button type="button" (click)="abrirAgrotoxicoModal()" class="btn btn-add"> + Adicionar Agrotóxico</button>
+
+      <div *ngFor="let agrotoxico of agrotoxicos().controls; let i = index" [formGroupName]="i" class="card agrotoxico-card">
+        <div class="card-body">
+          <button type="button" class="remove-button" (click)="removerAgrotoxico(i)">×</button>
+          <h5 class="card-title">{{ agrotoxico.get('nome')?.value || 'Novo Agrotóxico' }}</h5>
+          <p class="card-text">Data de Aplicação: {{ agrotoxico.get('dataAplicacao')?.value || 'Não especificada' }}</p>
+          <p class="card-text">Descrição: {{ agrotoxico.get('descricao')?.value || 'Não especificada' }}</p>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <div formArrayName="fertilizantes">
+      <h4>Fertilizantes</h4>
+      <button type="button" (click)="abrirFertilizanteModal()" class="btn btn-add">+ Adicionar Fertilizante</button>
+
+      <div *ngFor="let fertilizante of fertilizantes().controls; let j = index" [formGroupName]="j" class="card fertilizante-card">
+        <div class="card-body">
+          <button type="button" class="remove-button" (click)="removerFertilizante(j)">×</button>
+          <h5 class="card-title">{{ fertilizante.get('nome')?.value || 'Novo Fertilizante' }}</h5>
+          <p class="card-text">Data de Aplicação: {{ fertilizante.get('dataAplicacao')?.value || 'Não especificada' }}</p>
+          <p class="card-text">Descrição: {{ fertilizante.get('descricao')?.value || 'Não especificada' }}</p>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-submit">Cadastrar</button>
+  </form>
+</div>
+<app-agrotoxico-modal *ngIf="isAgrotoxicoModalOpen"
+                      (save)="adicionarAgrotoxico($event)"
+                      (close)="fecharAgrotoxicoModal()">
+</app-agrotoxico-modal>
+
+<app-fertilizante-modal *ngIf="isFertilizanteModalOpen"
+                        (save)="adicionarFertilizante($event)"
+                        (close)="fecharFertilizanteModal()">
+</app-fertilizante-modal>

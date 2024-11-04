@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AgroInfoFront", "AgroInfoFront\AgroInfoFront.esproj", "{F6111DE1-4781-4974-BFD1-001F7F72900F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6111DE1-4781-4974-BFD1-001F7F72900F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {01D837A6-6FC9-4359-9C85-8D73C326C026}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,31 @@
+<div class="navbar">
+  <div class="logo">
+    <img src="../../assets/images/TESTEas.png" alt="Logo">
+  </div>
+
+  <a [routerLink]="['/plantacaoAtiva']">
+    <i class="fas fa-seedling"></i>
+    <span>Plantações ativas</span>
+  </a>
+  <a [routerLink]="['/plantacaoFinalizada']">
+    <i class="fas fa-leaf"></i>
+    <span>Plantações finalizadas</span>
+  </a>
+  <a [routerLink]="['/criarPlantacao']">
+    <i class="fas fa-tractor"></i>
+    <span>Cadastrar plantação</span>
+  </a>
+  <a [routerLink]="['/previsaoTempo']">
+    <i class="fas fa-cloud-sun-rain"></i>
+    <span>Previsão do Tempo</span>
+  </a>
+  <div class="alerta-clima" *ngIf="alerta" [ngClass]="{
+  'alerta-chuva': alertaTipo === 'chuva',
+  'alerta-calor': alertaTipo === 'calor',
+  'alerta-frio': alertaTipo === 'frio',
+  'alerta-sem-alerta': alertaTipo === 'sem-alerta'
+}">
+    <i class="fas fa-exclamation-circle"></i>
+    {{ alerta }}
+  </div>
+</div>

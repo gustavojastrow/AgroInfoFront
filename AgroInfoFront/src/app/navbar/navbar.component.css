@@ -1,0 +1,79 @@
+.navbar {
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s;
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.navbar a {
+  display: flex;
+  align-items: center;
+  color: #2e7d32;
+  padding: 12px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+  .navbar a:hover {
+    background-color: #e8f5e9;
+  }
+
+  .navbar a i {
+    font-size: 1.5rem;
+  }
+
+  .navbar a span {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+
+img {
+  max-width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+
+  .alerta-clima
+{
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #2e7d32;
+  margin-top: 70px; 
+  padding: 8px 12px;
+  background-color: #e8f5e9;
+  border-radius: 6px;
+  border: 1px solid #c8e6c9;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s;
+}
+
+.alerta-clima i {
+  font-size: 1.2rem;
+  margin-right: 8px;
+  color: #2e7d32;
+}
+
+.alerta-clima:hover {
+  background-color: #c8e6c9;
+  cursor: pointer;
+}
+

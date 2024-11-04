@@ -1,0 +1,182 @@
+.container {
+  max-width: 1200px;
+  margin-left: 240px;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#plantacoes {
+  font-size: 2em;
+  color: #388e3c;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.plantacao-card {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s;
+}
+
+  .plantacao-card:hover {
+    transform: translateY(-5px);
+  }
+
+.card-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+  .card-cabecalho h3 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #388e3c;
+  }
+
+.descricao {
+  font-size: 1em;
+  color: #666;
+  margin-top: 5px;
+}
+
+.data-info {
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  color: #888;
+}
+
+.data-icone {
+  margin-right: 8px;
+}
+
+.botao-acoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.edit-delete-botoes {
+  display: flex;
+  gap: 15px;
+}
+
+.botao-acoes button,
+.edit-delete-botoes button {
+  background-color: #388e3c;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+    .botao-acoes button:hover,
+    .edit-delete-butoes button:hover {
+      background-color: #66bb6a;
+    }
+
+.detalhes {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border-top: 1px solid #ddd;
+  transition: opacity 0.3s;
+}
+
+  .detalhes.visible {
+    display: block;
+    opacity: 1;
+  }
+
+.imagem-galeria {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+  .imagem-galeria figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  .imagem-galeria img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+  }
+
+    .imagem-galeria img:hover {
+      transform: scale(1.05);
+    }
+
+  .imagem-galeria figcaption {
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #444;
+  }
+
+.detalhes-plantacao {
+  display: flex;
+  flex-direction: column;
+  margin-left:30px;
+}
+
+  .detalhes-plantacao h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+.lista {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+  .lista li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1em;
+    color: #555;
+  }
+
+    .lista li strong {
+      font-weight: bold;
+      color: #388e3c;
+    }
+
+.data-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95em;
+}
+
+  .data-item span {
+    color: #555;
+  }
+
+    .data-item span.label {
+      font-weight: bold;
+      color: #388e3c;
+    }

@@ -1,0 +1,72 @@
+<div class="container">
+  <h2 id="plantacoes">Plantações Ativas</h2>
+
+  <div *ngFor="let plantacao of plantacoes; let i = index" class="plantacao-card">
+    <div class="card-cabecalho">
+      <div>
+        <h3>{{ plantacao.nome }}</h3>
+        <p class="descricao">{{ plantacao.descricao }}</p>
+      </div>
+      <div class="data-info">
+        <span class="data-icone">🌱</span>
+        <span>Data: {{ currentDate | date: 'dd/MM/yyyy' }}</span>
+      </div>
+    </div>
+
+    <div class="botao-acoes">
+      <button (click)="mostrarDetalhes(i)">
+        {{ plantacao.showSubFields ? 'Ocultar Detalhes' : 'Mostrar Detalhes' }}
+      </button>
+      <div class="edit-delete-botoes">
+        <button (click)="editPlantacao(i)">Editar</button>
+        <button (click)="deletePlantacao(i)">Excluir</button>
+      </div>
+    </div>
+
+    <div class="detalhes" [class.visible]="plantacao.showSubFields">
+      <div class="imagem-galeria">
+        <figure *ngIf="plantacao.imagemInicio">
+          <img [src]="plantacao.imagemInicio" alt="{{ plantacao.nome }} - Início" />
+          <figcaption>Início</figcaption>
+        </figure>
+        <figure *ngIf="plantacao.imagemMeio">
+          <img [src]="plantacao.imagemMeio" alt="{{ plantacao.nome }} - Meio" />
+          <figcaption>Meio</figcaption>
+        </figure>
+        <figure *ngIf="plantacao.imagemFim">
+          <img [src]="plantacao.imagemFim" alt="{{ plantacao.nome }} - Fim" />
+          <figcaption>Fim</figcaption>
+        </figure>
+      </div>
+
+      <div class="detalhes-plantacao">
+        <h4>Agrotóxicos</h4>
+        <ul class="lista">
+          <li *ngFor="let agrotoxico of plantacao.agrotoxicos">
+            <strong>Nome:</strong> {{ agrotoxico.nome }}<br />
+            <strong>Tipo:</strong> {{ agrotoxico.tipo }}<br />
+            <strong>Objetivo:</strong> {{ agrotoxico.objetivo }}<br />
+            <strong>Data de Aplicação:</strong> {{ agrotoxico.dataAplicacao | date: 'dd/MM/yyyy' }}<br />
+            <strong>Dosagem:</strong> {{ agrotoxico.dosagem }}<br />
+            <strong>Descrição:</strong> {{ agrotoxico.descricao }}<br />
+            <strong>Nota do Resultado:</strong> {{ agrotoxico.notaResultado }}
+          </li>
+        </ul>
+
+        <h4>Fertilizantes</h4>
+        <ul class="lista">
+          <li *ngFor="let fertilizante of plantacao.fertilizantes">
+            <strong>Nome:</strong> {{ fertilizante.nome }}<br />
+            <strong>Tipo:</strong> {{ fertilizante.tipo }}<br />
+            <strong>Objetivo:</strong> {{ fertilizante.objetivo }}<br />
+            <strong>Data de Aplicação:</strong> {{ fertilizante.dataAplicacao | date: 'dd/MM/yyyy' }}<br />
+            <strong>Quantidade:</strong> {{ fertilizante.quantidade }}<br />
+            <strong>Descrição:</strong> {{ fertilizante.descricao }}<br />
+            <strong>Nota do Resultado:</strong> {{ fertilizante.notaResultado }}
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</div>

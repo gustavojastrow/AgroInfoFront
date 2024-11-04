@@ -1,0 +1,93 @@
+# Arquivos de backup do sistema operacional
+*.DS_Store
+Thumbs.db
+
+appsettings.Local.json
+appsettings.json
+# Pastas do Visual Studio
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Pastas de build e saída
+bin/
+obj/
+out/
+
+# Logs
+*.log
+Logs/
+
+# Arquivos de configuração do usuário
+*.sln.ide
+*.swp
+*.temp
+*.pid
+*.tar.gz
+*.diff
+*.patch
+
+# Configurações do Visual Studio Code
+.vscode/
+
+# Arquivos de pacotes NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Arquivos de dependências do ASP.NET Core
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+
+# Certificados de desenvolvimento
+*.pfx
+*.p12
+
+# Configurações de ambiente local e dados sensíveis
+appsettings.Development.json
+appsettings.Local.json
+
+# Dados de publicação
+.publish/
+PublishProfiles/
+
+# Diretórios de cache
+*.stackdump
+node_modules/
+npm-debug.log*
+yarn-error.log
+.env
+
+# Arquivos do Rider
+.idea/
+*.sln.iml
+.idea/
+.idea_modules/
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/shelf/
+
+# Arquivos de configurações do Mono
+.mono/
+.monodevelop/
+# Arquivos de configurações do Mac
+*.DS_Store
+*.AppleDouble
+*/Icon?
+*/.Spotlight-V100
+*/.Trashes
+
+# Outras configurações do sistema operacional
+._*
+desktop.ini
+.npm/
+node_modules
